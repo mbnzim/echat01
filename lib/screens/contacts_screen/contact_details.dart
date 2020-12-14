@@ -204,7 +204,7 @@ class _ChatInfo extends StatelessWidget {
               indent: 65), // 65 (left padding + icon size)
           _MediaTile(
               icon: Icons.star,
-              iconColor: Hexcolor('#800020'),
+              iconColor: HexColor('#800020'),
               title: 'Starred Messages',
               end: 'None'),
           Divider(
@@ -214,7 +214,7 @@ class _ChatInfo extends StatelessWidget {
           ),
           _MediaTile(
             icon: Icons.search,
-            iconColor: Hexcolor('##ff6d00'),
+            iconColor: HexColor('##ff6d00'),
             title: 'Chat Search',
             end: '',
           ),

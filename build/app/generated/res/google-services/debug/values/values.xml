@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">955670371626-fcg6p2ntlikhjrdi6bdjtpu2t69kd166.apps.googleusercontent.com</string>
-    <string name="firebase_database_url" translatable="false">https://flutter-whatsapp-1ab58.firebaseio.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">955670371626</string>
-    <string name="google_api_key" translatable="false">AIzaSyC-6MQGM-ilcUBoYhvUXl2aJ84s5bHnWUc</string>
-    <string name="google_app_id" translatable="false">1:955670371626:android:b717d73a8999a7e3de5253</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC-6MQGM-ilcUBoYhvUXl2aJ84s5bHnWUc</string>
-    <string name="google_storage_bucket" translatable="false">flutter-whatsapp-1ab58.appspot.com</string>
-    <string name="project_id" translatable="false">flutter-whatsapp-1ab58</string>
+    <string name="default_web_client_id" translatable="false">517861607230-juo7acnn9jhdl884tk58iddcm4ennvrq.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">517861607230</string>
+    <string name="google_api_key" translatable="false">AIzaSyA326cn3pBAKcbZYs_CTtw5UmyQkA7Xoyk</string>
+    <string name="google_app_id" translatable="false">1:517861607230:android:1a2e92b0917487a1fc8e6f</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA326cn3pBAKcbZYs_CTtw5UmyQkA7Xoyk</string>
+    <string name="google_storage_bucket" translatable="false">threesixfive-b8711.appspot.com</string>
+    <string name="project_id" translatable="false">threesixfive-b8711</string>
 </resources>

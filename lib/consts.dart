@@ -25,8 +25,8 @@ Color kBorderColor4 = Colors.white.withOpacity(0.2);
 Color kBaseWhiteColor = Colors.white.withOpacity(0.87);
 
 Color kBlackColor = Colors.black; //('#1C1C1E');
-Color kBlackColor2 = Hexcolor('#121212');// Hexcolor('#161616');
-Color kBlackColor3 = Hexcolor('#1C1C1E');// Hexcolor('#2C2C2E');
+Color kBlackColor2 = HexColor('#121212');// Hexcolor('#161616');
+Color kBlackColor3 = HexColor('#1C1C1E');// Hexcolor('#2C2C2E');
 
 TextStyle kWhatsAppStyle = TextStyle(
   fontSize: 21,
@@ -71,7 +71,7 @@ TextStyle kChatBubbleTextStyle = TextStyle(
 TextStyle kReplyTitleStyle = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.w600,
-  color: Hexcolor('#FF0266'),
+  color: HexColor('#FF0266'),
 );
 
 TextStyle kReplySubtitleStyle = TextStyle(
@@ -86,10 +86,10 @@ class ReplyColorPair {
 }
 
 List<ReplyColorPair> replyColors = [
-  ReplyColorPair(user: Hexcolor('#09af00'), peer: Hexcolor('#FF0266')),  
-  ReplyColorPair(user: Hexcolor('#C62828'), peer: Hexcolor('#d602ee')),  
-  ReplyColorPair(user: Hexcolor('#f47100'), peer: Hexcolor('#61d800')),  
-  ReplyColorPair(user: Hexcolor('#4E342E'), peer: Hexcolor('#BF360C')),  
+  ReplyColorPair(user: HexColor('#09af00'), peer: HexColor('#FF0266')),  
+  ReplyColorPair(user: HexColor('#C62828'), peer: HexColor('#d602ee')),  
+  ReplyColorPair(user: HexColor('#f47100'), peer: HexColor('#61d800')),  
+  ReplyColorPair(user: HexColor('#4E342E'), peer: HexColor('#BF360C')),  
   
 ];
 
