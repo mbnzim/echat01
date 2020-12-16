@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:firebase_storage/firebase_storage.dart';
@@ -37,13 +35,13 @@ class _PhotoUploaderState extends State<PhotoUploader> {
   void _startUpload() {
     setState(() {
       _uploadTask = _storage.getUploadTask(
-          widget.file, 'profilePictures/${widget.uid}.png');
+          widget.file, 'profilePictures/${widget.uid}.jpg');
       uploadStarted = true;
     });
   }
 
   void getImageUrl() async {
-    String url = await _storage.getUrl('profilePictures', '${widget.uid}.png');
+    String url = await _storage.getUrl('profilePictures', '${widget.uid}.jpg');
     widget.getUrl(url);
   }
 
@@ -69,13 +67,13 @@ class _PhotoUploaderState extends State<PhotoUploader> {
                   children: [
                     SizedBox(height: 10),
                     if (_uploadTask.isInProgress) CupertinoActivityIndicator(),
-                    // SizedBox(height: 5),
-                    // // LinearProgressIndicator(
-                    // //   value: progress,
-                    // // ),
-                    // if (_uploadTask.isInProgress)
-                    //   Text(
-                    //       'Uploaded : ${(progress * 100).toStringAsFixed(2)} %'),
+                     SizedBox(height: 5),
+                      LinearProgressIndicator(
+                      value: progress,
+                     ),
+                     if (_uploadTask.isInProgress)
+                      Text(
+                          'Uploaded : ${(progress * 100).toStringAsFixed(2)} %'),
                   ],
                 );
               },

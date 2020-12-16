@@ -101,7 +101,7 @@ class ContactsScreen extends StatelessWidget {
                   child: Text('loading...'),
                 );
               return _buildContacts(context, snapshot);
-            },
+            }, 
           ),
         ),
       ],

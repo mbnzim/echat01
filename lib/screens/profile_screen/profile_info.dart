@@ -81,9 +81,9 @@ class _ProfileInfoState extends State<ProfileInfo>
             : FadeTransition(opacity: animation, child: child);
       },
     ));
-    // Navigator.of(context).push(MaterialPageRoute(
-    //   builder: (context) => EditProfilePicture(user, imageUrl),
-    // ));
+     Navigator.of(context).push(MaterialPageRoute(
+       builder: (context) => EditProfilePicture(user, imageUrl),
+     ));
   }
 
   void goToStart() {

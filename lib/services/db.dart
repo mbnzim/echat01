@@ -226,7 +226,7 @@ class DB {
       print('****************** DB getUserDocRef error **********************');
       print(error);
       throw error;
-    }
+    } 
   }
 
   void updateUserInfo(String userId, Map<String, dynamic> data) async {

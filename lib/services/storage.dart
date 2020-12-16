@@ -4,7 +4,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 
 class Storage {
   final _storageBucket =
-      FirebaseStorage(storageBucket: 'gs://flutter-whatsapp-1ab58.appspot.com');
+      FirebaseStorage(storageBucket: 'gs://threesixfive-b8711.appspot.com');
 
   Future<String> getUrl(String path, String id) async {
     try {
