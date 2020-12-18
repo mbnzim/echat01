@@ -13,7 +13,7 @@ import 'package:whatsapp_clone/widgets/media_view.dart';
 
 class ContactDetails extends StatelessWidget {
   final User contact;
-  final String groupId; 
+  final String groupId;
 
   const ContactDetails({Key key, this.contact, this.groupId}) : super(key: key);
 

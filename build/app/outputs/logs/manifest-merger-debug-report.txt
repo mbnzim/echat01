@@ -10,6 +10,7 @@ MERGED from [:audioplayers] C:\Users\Server PC\Documents\Apps\echat01\build\audi
 MERGED from [:video_player] C:\Users\Server PC\Documents\Apps\echat01\build\video_player\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:firebase_storage] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-15:12
 MERGED from [:firebase_core_web] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_core_web\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
@@ -27,6 +28,7 @@ MERGED from [com.google.android.gms:play-services-measurement-api:17.2.2] C:\Use
 MERGED from [com.google.android.gms:play-services-measurement-sdk:17.2.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7043a9d5f4a737f3f819087d2037f972\play-services-measurement-sdk-17.2.2\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\c170ffc6de839d3f63125028decef8b0\jetified-firebase-storage-17.0.0\AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:2:1-26:12
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:15:1-36:12
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:17:1-42:12
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:17:1-47:12
 MERGED from [com.google.firebase:firebase-auth-interop:18.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\ff98db406dde5e0ef3217700c1c8d1dd\firebase-auth-interop-18.0.0\AndroidManifest.xml:2:1-10:12
@@ -91,6 +93,8 @@ MERGED from [:firebase_storage] C:\Users\Server PC\Documents\Apps\echat01\build\
 MERGED from [:firebase_storage] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
 MERGED from [:firebase_core] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:7:5-13:19
@@ -109,6 +113,8 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gr
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\c170ffc6de839d3f63125028decef8b0\jetified-firebase-storage-17.0.0\AndroidManifest.xml:29:5-35:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:16:5-24:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:16:5-24:19
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:28:5-34:19
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:28:5-34:19
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:23:5-40:19
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:28:5-45:19
@@ -203,6 +209,8 @@ MERGED from [:firebase_storage] C:\Users\Server PC\Documents\Apps\echat01\build\
 MERGED from [:firebase_storage] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:firebase_core] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
@@ -237,6 +245,8 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gr
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\c170ffc6de839d3f63125028decef8b0\jetified-firebase-storage-17.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:19:5-21:41
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:19:5-21:41
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:21:5-44
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:20:5-44
@@ -337,6 +347,8 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gr
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\c170ffc6de839d3f63125028decef8b0\jetified-firebase-storage-17.0.0\AndroidManifest.xml:27:5-67
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:14:5-67
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:14:5-67
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:26:5-67
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:26:5-67
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\160985c233e23f79bad9a37e22a7158f\play-services-measurement-impl-17.2.2\AndroidManifest.xml:23:5-67
@@ -355,6 +367,8 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:firebase_storage] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_storage\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
+MERGED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
 MERGED from [:firebase_core] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_core\intermediates\library_manifest\debug\AndroidManifest.xml:8:9-12:19
@@ -365,6 +379,8 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gr
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\c170ffc6de839d3f63125028decef8b0\jetified-firebase-storage-17.0.0\AndroidManifest.xml:30:9-34:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:17:9-23:19
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:17:9-23:19
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:9-33:19
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:29:9-33:19
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:33:9-39:19
 MERGED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:33:9-39:19
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:29:9-35:19
@@ -391,6 +407,12 @@ ADDED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cl
 		ADDED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
 	android:name
 		ADDED from [:cloud_firestore] C:\Users\Server PC\Documents\Apps\echat01\build\cloud_firestore\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-133
+meta-data#com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar
+ADDED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
+	android:value
+		ADDED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:11:17-82
+	android:name
+		ADDED from [:firebase_database] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_database\intermediates\library_manifest\debug\AndroidManifest.xml:10:17-127
 meta-data#com.google.firebase.components:io.flutter.plugins.firebaseauth.FlutterFirebaseAppRegistrar
 ADDED from [:firebase_auth] C:\Users\Server PC\Documents\Apps\echat01\build\firebase_auth\intermediates\library_manifest\debug\AndroidManifest.xml:9:13-11:85
 	android:value
@@ -431,6 +453,8 @@ MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gr
 MERGED from [com.google.firebase:firebase-storage:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\c170ffc6de839d3f63125028decef8b0\jetified-firebase-storage-17.0.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:13:5-79
 MERGED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:13:5-79
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:25:5-79
+MERGED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:25:5-79
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:22:5-79
 MERGED from [com.google.firebase:firebase-iid:20.0.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\f26cdfb5f8d69cbc9663543f3ec1de65\firebase-iid-20.0.2\AndroidManifest.xml:22:5-79
 MERGED from [com.google.android.gms:play-services-measurement-impl:17.2.2] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\160985c233e23f79bad9a37e22a7158f\play-services-measurement-impl-17.2.2\AndroidManifest.xml:24:5-79
@@ -523,6 +547,12 @@ ADDED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.g
 		ADDED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:22:17-82
 	android:name
 		ADDED from [com.google.firebase:firebase-firestore:21.3.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\7bf2b5d2ba63112b74f3c9cc928d2d92\jetified-firebase-firestore-21.3.0\AndroidManifest.xml:21:17-111
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:30:13-32:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:32:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\b09301e1aa6b0a262167dc047d3440bd\jetified-firebase-database-17.0.0\AndroidManifest.xml:31:17-109
 activity#com.google.firebase.auth.internal.FederatedSignInActivity
 ADDED from [com.google.firebase:firebase-auth:17.0.0] C:\Users\Server PC\.gradle\caches\transforms-2\files-2.1\03953c35044a46eadaa084467489769f\jetified-firebase-auth-17.0.0\AndroidManifest.xml:24:9-31:50
 	android:excludeFromRecents

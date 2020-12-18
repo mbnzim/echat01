@@ -67,7 +67,7 @@ class _MediaUploadingBubbleState extends State<MediaUploadingBubble> {
           crossAxisAlignment: WrapCrossAlignment.end,
           alignment: WrapAlignment.end,
           runAlignment: WrapAlignment.spaceBetween,
-          children: [
+          children: [ 
             Wrap(
               children: [
                 Stack(

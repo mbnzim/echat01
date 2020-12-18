@@ -166,7 +166,7 @@ class _EditProfilePictureState extends State<EditProfilePicture> {
         ),
       ),
     );
-  }
+  } 
 
   void pickImage() async {
     var pickedFile = await Utils.pickImage(context);

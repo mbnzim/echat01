@@ -1,4 +1,5 @@
-import 'package:audioplayers/audio_cache.dart';
+import 'package:audioplayers/audioplayers.dart';
+//import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
@@ -132,8 +133,9 @@ class Utils {
       // maxDuration: Duration(minutes: 1),
     );
   }
+  
 
-  static final AudioCache player = AudioCache();
-  static playSound(String path) => player.play(path);
+  /*static final AudioCache player = AudioCache();
+  static playSound(String path) => player.play(path);*/
 }
 

@@ -46,7 +46,7 @@ class _StoryItemState extends State<StoryItem> {
         SizedBox(height: 10),
         SizedBox(
           width: 54,
-          child: Center(
+          child: Center( 
             child: Text(
               info.username.split(' ')[0],
               overflow: TextOverflow.ellipsis,

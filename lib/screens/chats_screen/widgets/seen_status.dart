@@ -8,7 +8,7 @@ class SeenStatus extends StatelessWidget {
     this.isSeen,
     this.isMe,
     this.timestamp,
-    Key key,
+    Key key, 
   }) : super(key: key);
 
   String getTime() {

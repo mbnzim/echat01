@@ -11,7 +11,7 @@ enum AuthMode {
 }
 
 class InputField extends StatefulWidget {
-  InputField({ 
+  InputField({
     Key key,
   }) : super(key: key);
 
