@@ -1,9 +1,25 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:whatsapp_clone/consts.dart';
 import 'package:whatsapp_clone/models/media_model.dart';
 import 'package:whatsapp_clone/models/message.dart';
+import 'package:whatsapp_clone/models/post_model.dart';
+import 'package:whatsapp_clone/models/posts.dart';
+import 'package:whatsapp_clone/models/user.dart';
 
 class DB {
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final Firestore _firestore = Firestore.instance;
+  User user;
+  Post post;
+ // Like like;
+  Message _message;
+ // Comment comment;
+ // final GoogleSignIn _googleSignIn = GoogleSignIn();
+  StorageReference _storageReference;
+
   final CollectionReference _usersCollection =
       Firestore.instance.collection(USERS_COLLECTION);
   final CollectionReference _messagesCollection =
@@ -12,7 +28,7 @@ class DB {
   Stream<QuerySnapshot> getContactsStream() {
     return Firestore.instance.collection(USERS_COLLECTION).snapshots();
   }
-
+ 
   Stream<DocumentSnapshot> getUserContactsStream(String uid) {
     return _usersCollection.document(uid).snapshots();
   }
@@ -239,4 +255,24 @@ class DB {
       throw error;
     }
   } 
+
+  Future<FirebaseUser> getCurrentUser() async {
+    FirebaseUser currentUser;
+    currentUser = await _auth.currentUser();
+    print("EMAIL ID : ${currentUser.email}");
+    return currentUser;
+  }
+
+   static void createPost(PostModel posts) {
+    postsRef.document(posts.authorId).collection('USERPOSTS').add({
+      'imageUrl': posts.imageUrl,
+      'caption': posts.caption,
+      'location': posts.location,
+      'likeCount': posts.likeCount,
+      'authorId': posts.authorId,
+      'timestamp': posts.timestamp,
+    });
+  }
+
+
 }

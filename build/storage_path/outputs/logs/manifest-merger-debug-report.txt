@@ -1,0 +1,23 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:1:1-4:12
+INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:1:1-4:12
+INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:1:1-4:12
+	package
+		ADDED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:2:3-41
+		INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:3:3-77
+	android:name
+		ADDED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml:3:20-75
+uses-sdk
+INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml
+INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml
+		ADDED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\usr\flutter\.pub-cache\hosted\pub.dartlang.org\storage_path-0.2.0\android\src\main\AndroidManifest.xml

@@ -37,13 +37,13 @@ class _PhotoUploaderState extends State<PhotoUploader> {
   void _startUpload() {
     setState(() {
       _uploadTask = _storage.getUploadTask(
-          widget.file, 'profilePictures/${widget.uid}.png');
+          widget.file, 'profilePictures/${widget.uid}.jpg');
       uploadStarted = true;
     });
   }
 
   void getImageUrl() async {
-    String url = await _storage.getUrl('profilePictures', '${widget.uid}.png');
+    String url = await _storage.getUrl('profilePictures', '${widget.uid}.jpg');
     widget.getUrl(url);
   }
 

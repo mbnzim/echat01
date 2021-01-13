@@ -5,6 +5,7 @@ import 'package:whatsapp_clone/consts.dart';
 import 'package:whatsapp_clone/models/chat_data.dart';
 import 'package:whatsapp_clone/providers/chat.dart';
 import 'package:whatsapp_clone/screens/chats_screen/widgets/chats_list_item.dart';
+import 'package:whatsapp_clone/screens/profile_screen/profile_info.dart';
 import 'package:whatsapp_clone/services/db.dart';
 import 'package:whatsapp_clone/widgets/body_list.dart';
 import 'package:whatsapp_clone/screens/chats_screen/widgets/stories.dart';
@@ -83,7 +84,12 @@ class _AllChatsScreenState extends State<AllChatsScreen>
                       onPressed: () {},
                       child: Container(
                         padding: const EdgeInsets.all(5),
-                        child: Icon(Icons.add, color: Colors.white, size: 25),
+                        child: IconButton(icon: Icon(Icons.add, color: Colors.white, size: 25),
+                        onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: ((context) => ProfileInfo())));
+                        }),
+                        
                         decoration: BoxDecoration(
                           color: kBlackColor3,
                           borderRadius: BorderRadius.circular(10),
@@ -92,7 +98,7 @@ class _AllChatsScreenState extends State<AllChatsScreen>
                     ),
                   ),
                   SizedBox(height: 15),
-                  Stories(),
+                 // Stories(),
                 ],
               ),
             ),

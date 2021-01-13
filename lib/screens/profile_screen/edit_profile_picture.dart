@@ -83,7 +83,7 @@ class _EditProfilePictureState extends State<EditProfilePicture> {
           title: Text(
             'Profile Picture',
             style: TextStyle(
-                fontSize: 18,
+                fontSize: 18, 
                 fontWeight: FontWeight.bold,
                 color: kBaseWhiteColor),
           ),

@@ -5,10 +5,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:whatsapp_clone/consts.dart';
+import 'package:whatsapp_clone/models/user.dart';
 import 'package:whatsapp_clone/providers/chat.dart';
 import 'package:whatsapp_clone/screens/calls_screen/calls_screen.dart';
+import 'package:whatsapp_clone/screens/calls_screen/feed_screen.dart';
 import 'package:whatsapp_clone/screens/chats_screen/all_chats_screen.dart';
 import 'package:whatsapp_clone/screens/profile_screen/profile_info.dart';
+import 'package:whatsapp_clone/screens/profile_screen/profile_page.dart';
+import 'package:whatsapp_clone/screens/search/search_screen.dart';
 import 'package:whatsapp_clone/services/db.dart';
 
 import 'contacts_screen/contacts_screen.dart';
@@ -23,7 +27,8 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin, Widget
   TabController tabController;
   DB db;
   bool isLoading = true;
-  bool initLoaded = true;  
+  bool initLoaded = true; 
+  User currentUser; 
 
   @override
   void initState() {
@@ -86,10 +91,11 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin, Widget
     return TabBarView(
       controller: tabController,
       children: [
-        CallsScreen(),
+        InstaFeedScreen(),
         AllChatsScreen(),
-        ContactsScreen(),
-        ProfileInfo(),
+        SearchScreen(),
+        //ContactsScreen(),
+        ProfilePage(profileId: currentUser?.id,),
       ],
     );
   }  
@@ -145,7 +151,8 @@ class _TabsState extends State<Tabs> {
       items: [
         _buildTabBarItem('Calls', CupertinoIcons.phone, CupertinoIcons.phone_solid),
         _buildTabBarItem('Chats', CupertinoIcons.conversation_bubble, CupertinoIcons.conversation_bubble),
-        _buildTabBarItem('Contacts', CupertinoIcons.group,CupertinoIcons.group_solid),
+        //_buildTabBarItem('Search', CupertinoIcons.search_circle,CupertinoIcons.search_circle_fill),
+        _buildTabBarItem('Contacts', CupertinoIcons.search,CupertinoIcons.search),
         _buildTabBarItem('Me', CupertinoIcons.person, CupertinoIcons.person_solid),
       ],
       onTap: onTap,

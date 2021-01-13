@@ -9,7 +9,7 @@ abstract class BaseAuth {
   Future<bool> signUp(String username, String email, String password);
   Future<FirebaseUser> getCurrentUser();
   Future<void> signOut();
-}
+} 
 
 class Auth with ChangeNotifier implements BaseAuth {
   // Future<SharedPreferences> _prefs = SharedPreferences.getInstance();

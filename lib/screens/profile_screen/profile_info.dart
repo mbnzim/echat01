@@ -158,12 +158,13 @@ class _ProfileInfoState extends State<ProfileInfo>
               ),
             ),
           ),
+          
         ),
         SizedBox(height: 15),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildSectionTitle('USERNAME'),
+            _buildSectionTitle('Username'),
             SizedBox(height: 5),
             user == null
                 ? CupertinoActivityIndicator()
@@ -214,7 +215,7 @@ class _ProfileInfoState extends State<ProfileInfo>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildSectionTitle('EMAIL ADDRESS'),
+        _buildSectionTitle('Email address'),
         SizedBox(height: 5),
         Container(
           decoration: BoxDecoration(
@@ -244,7 +245,7 @@ class _ProfileInfoState extends State<ProfileInfo>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        _buildSectionTitle('ABOUT'),
+        _buildSectionTitle('About'),
         SizedBox(height: 5),
         Container(
           decoration: BoxDecoration(
@@ -333,10 +334,40 @@ class _ProfileInfoState extends State<ProfileInfo>
         child: Column(
           children: [
             Container(
-              // height: mq.size.height * 0.12,
+             height: mq.size.height * 0.12,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                       AppBar(
+                        backgroundColor: Colors.black12,
+                        elevation: 1,
+                      leading: IconButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          icon: Icon(
+                            Icons.arrow_back,
+                            color: Colors.white,
+                          ),
+                        ),
+                        title: Text(
+                            "Edit Profile",
+                            style: TextStyle(fontSize: 25,color: Colors.white, fontWeight: FontWeight.w500),
+                          ),
+                        actions: [
+                        CupertinoButton(
+                      padding: const EdgeInsets.all(0),
+                      onPressed: () {
+                        showConfirmDialog(context);
+                      },
+                      child: Text(
+                        'Log Out',
+                        style: TextStyle(
+                            fontSize: 17, color: Theme.of(context).errorColor),
+                      ),
+                    ),
+                        ],
+                      ),/*
                   TabScreenTitle(
                     title: 'Edit Profile',
                     actionWidget: CupertinoButton(
@@ -350,7 +381,7 @@ class _ProfileInfoState extends State<ProfileInfo>
                             fontSize: 17, color: Theme.of(context).errorColor),
                       ),
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),
