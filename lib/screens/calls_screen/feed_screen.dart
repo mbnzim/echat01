@@ -14,7 +14,7 @@ import 'package:whatsapp_clone/services/repository.dart';
 //import 'package:whatsapp_clone/ui/chat_screen.dart';
 import 'package:whatsapp_clone/screens/comments/comments_screen.dart';
 import 'package:whatsapp_clone/screens/profile_screen/friend_profile_screen.dart';
-import 'package:whatsapp_clone/screens/likes/likes_screen.dart'; 
+import 'package:whatsapp_clone/screens/likes/likes_screen.dart';
 
 class InstaFeedScreen extends StatefulWidget {
   @override
@@ -72,21 +72,27 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
         backgroundColor: Colors.black26,
         centerTitle: true,
         elevation: 1.0,
-        leading: new  IconButton(
-          icon: Icon(Icons.camera_alt, color: Colors.white,),
-          onPressed: (){
+        leading: new IconButton(
+          icon: Icon(
+            Icons.camera_alt,
+            color: Colors.white,
+          ),
+          onPressed: () {
             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => UploadPage(currentUser: currentUser,)));
-            
+                builder: (context) => UploadPage(
+                      currentUser: currentUser,
+                    )));
           },
-        ), 
-        title:
-            SizedBox(height: 35.0, child: Text("")),
+        ),
+        title: SizedBox(height: 35.0, child: Text("")),
         actions: <Widget>[
-           Padding(
+          Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: IconButton(
-              icon: Icon(Icons.notifications, color: Colors.white,),
+              icon: Icon(
+                Icons.notifications,
+                color: Colors.white,
+              ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: ((context) => FeedScreen())));
@@ -96,10 +102,15 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 12.0),
             child: IconButton(
-              icon: Icon(Icons.send, color: Colors.white,),
+              icon: Icon(
+                Icons.send,
+                color: Colors.white,
+              ),
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: ((context) => ContactsScreen())));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: ((context) => ContactsScreen())));
               },
             ),
           )
@@ -204,19 +215,25 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
                         ),
                       ),
                       list[index].data['location'] != null
-                          ? new Text(
-                              list[index].data['location'],
-                              style: TextStyle(color: Colors.grey),
-                            )
+                          ? new Row(children: <Widget>[
+                              Icon(FontAwesomeIcons.retweet, size: 12),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                list[index].data['location'],
+                                style: TextStyle(color: Colors.grey),
+                              )
+                            ])
                           : Container(),
                     ],
                   )
                 ],
               ),
-              /*new IconButton(
-                icon: Icon(Icons.more_vert),
+              new IconButton(
+                icon: Icon(Icons.keyboard_control),
                 onPressed: null,
-              )*/
+              )
             ],
           ),
         ),
@@ -225,27 +242,31 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
           placeholder: ((context, s) => Center(
                 child: CircularProgressIndicator(),
               )),
-          width: 125.0,
-          height: 250.0,
           fit: BoxFit.cover,
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               new Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
+                  new Icon(FontAwesomeIcons.retweet, size: 28),
+                  new SizedBox(
+                    width: 230,
+                  ),
                   GestureDetector(
                       child: _isLiked
                           ? Icon(
                               FontAwesomeIcons.fire,
                               color: Colors.orange,
+                              size: 28,
                             )
                           : Icon(
                               FontAwesomeIcons.fire,
                               color: null,
+                              size: 28,
                             ),
                       onTap: () {
                         if (!_isLiked) {
@@ -261,26 +282,6 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
                           //saveLikeValue(_isLiked);
                           postUnlike(list[index].reference, currentUser);
                         }
-
-                        // _repository.checkIfUserLikedOrNot(_user.uid, snapshot.data[index].reference).then((isLiked) {
-                        //   print("reef : ${snapshot.data[index].reference.path}");
-                        //   if (!isLiked) {
-                        //     setState(() {
-                        //       icon = Icons.favorite;
-                        //       color = Colors.red;
-                        //     });
-                        //     postLike(snapshot.data[index].reference);
-                        //   } else {
-
-                        //     setState(() {
-                        //       icon =FontAwesomeIcons.heart;
-                        //       color = null;
-                        //     });
-                        //     postUnlike(snapshot.data[index].reference);
-                        //   }
-                        // });
-                        // updateValues(
-                        //     snapshot.data[index].reference);
                       }),
                   new SizedBox(
                     width: 16.0,
@@ -297,19 +298,25 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
                     },
                     child: new Icon(
                       FontAwesomeIcons.comment,
+                      size: 28,
                     ),
                   ),
                   new SizedBox(
                     width: 16.0,
                   ),
-                //  new Icon(FontAwesomeIcons.paperPlane),
+                  new Icon(
+                    FontAwesomeIcons.shareAlt,
+                    size: 28,
+                  ),
                 ],
               ),
-              //new Icon(FontAwesomeIcons.bookmark)
             ],
           ),
         ),
-        FutureBuilder(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+          FutureBuilder(
           future: _repository.fetchPostLikes(list[index].reference),
           builder:
               ((context, AsyncSnapshot<List<DocumentSnapshot>> likesSnapshot) {
@@ -328,11 +335,11 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: likesSnapshot.data.length > 1
                       ? Text(
-                          "Liked by ${likesSnapshot.data[0].data['ownerName']} and ${(likesSnapshot.data.length - 1).toString()} others",
+                          "${(likesSnapshot.data.length - 1).toString()} Likes ",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
                       : Text(likesSnapshot.data.length == 1
-                          ? "Liked by ${likesSnapshot.data[0].data['ownerName']}"
+                          ? "${(likesSnapshot.data.length).toString()} Likes  "
                           : "0 Likes"),
                 ),
               );
@@ -341,6 +348,11 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
             }
           }),
         ),
+                 Padding(
+                          padding: const EdgeInsets.only(top: 4.0),
+                          child: commentWidget(list[index].reference)),
+                        ]),
+      
         Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -350,17 +362,17 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
                     children: <Widget>[
                       Wrap(
                         children: <Widget>[
-                          Text(list[index].data['postOwnerName'],
-                              style: TextStyle(fontWeight: FontWeight.bold)),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
+                         /* Text(list[index].data['postOwnerName'],
+                              style: TextStyle(fontWeight: FontWeight.bold)),*/
+                         Padding(
+                            padding: const EdgeInsets.only(left: 0.0),
                             child: Text(list[index].data['caption']),
                           )
                         ],
                       ),
-                      Padding(
+                     /* Padding(
                           padding: const EdgeInsets.only(top: 4.0),
-                          child: commentWidget(list[index].reference))
+                          child: commentWidget(list[index].reference))*/
                     ],
                   )
                 : commentWidget(list[index].reference)),
@@ -379,8 +391,8 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
         if (snapshot.hasData) {
           return GestureDetector(
             child: Text(
-              'View all ${snapshot.data.length} comments',
-              style: TextStyle(color: Colors.grey),
+              '${snapshot.data.length} Comments',
+              style: TextStyle(color: Colors.grey,fontWeight: FontWeight.bold),
             ),
             onTap: () {
               Navigator.push(
@@ -424,282 +436,3 @@ class _InstaFeedScreenState extends State<InstaFeedScreen> {
     });
   }
 }
-
-// class ListItem extends StatefulWidget {
-//   final List<DocumentSnapshot> list;
-//   final User user;
-//   final User currentUser;
-//   final int index;
-
-//   ListItem({this.list, this.user, this.index, this.currentUser});
-
-//   @override
-//   _ListItemState createState() => _ListItemState();
-// }
-
-// class _ListItemState extends State<ListItem> {
-//   var _repository = Repository();
-//   bool _isLiked = false;
-//   Future<List<DocumentSnapshot>> _future;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     print("USERRR : ${widget.user.uid}");
-//     return Column(
-//       mainAxisAlignment: MainAxisAlignment.start,
-//       mainAxisSize: MainAxisSize.min,
-//       crossAxisAlignment: CrossAxisAlignment.stretch,
-//       children: <Widget>[
-//         Padding(
-//           padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 8.0),
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             children: <Widget>[
-//               Row(
-//                 children: <Widget>[
-//                   new Container(
-//                     height: 40.0,
-//                     width: 40.0,
-//                     decoration: new BoxDecoration(
-//                       shape: BoxShape.circle,
-//                       image: new DecorationImage(
-//                           fit: BoxFit.fill,
-//                           image: new NetworkImage(widget.user.photoUrl)),
-//                     ),
-//                   ),
-//                   new SizedBox(
-//                     width: 10.0,
-//                   ),
-//                   Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: <Widget>[
-//                       new Text(
-//                         widget.user.displayName,
-//                         style: TextStyle(fontWeight: FontWeight.bold),
-//                       ),
-//                       widget.list[widget.index].data['location'] != null
-//                           ? new Text(
-//                               widget.list[widget.index].data['location'],
-//                               style: TextStyle(color: Colors.grey),
-//                             )
-//                           : Container(),
-//                     ],
-//                   )
-//                 ],
-//               ),
-//               new IconButton(
-//                 icon: Icon(Icons.more_vert),
-//                 onPressed: null,
-//               )
-//             ],
-//           ),
-//         ),
-//         CachedNetworkImage(
-//           imageUrl: widget.list[widget.index].data['imgUrl'],
-//           placeholder: ((context, s) => Center(
-//                 child: CircularProgressIndicator(),
-//               )),
-//           width: 125.0,
-//           height: 250.0,
-//           fit: BoxFit.cover,
-//         ),
-//         Padding(
-//           padding: const EdgeInsets.all(16.0),
-//           child: Row(
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//             children: <Widget>[
-//               new Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//                 children: <Widget>[
-//                   GestureDetector(
-//                       child: _isLiked
-//                           ? Icon(
-//                               Icons.favorite,
-//                               color: Colors.red,
-//                             )
-//                           : Icon(
-//                               FontAwesomeIcons.heart,
-//                               color: null,
-//                             ),
-//                       onTap: () {
-//                         if (!_isLiked) {
-//                           setState(() {
-//                             _isLiked = true;
-//                           });
-//                           // saveLikeValue(_isLiked);
-//                           postLike(widget.list[widget.index].reference);
-//                         } else {
-//                           setState(() {
-//                             _isLiked = false;
-//                           });
-//                           //saveLikeValue(_isLiked);
-//                           postUnlike(widget.list[widget.index].reference);
-//                         }
-
-//                         // _repository.checkIfUserLikedOrNot(_user.uid, snapshot.data[index].reference).then((isLiked) {
-//                         //   print("reef : ${snapshot.data[index].reference.path}");
-//                         //   if (!isLiked) {
-//                         //     setState(() {
-//                         //       icon = Icons.favorite;
-//                         //       color = Colors.red;
-//                         //     });
-//                         //     postLike(snapshot.data[index].reference);
-//                         //   } else {
-
-//                         //     setState(() {
-//                         //       icon =FontAwesomeIcons.heart;
-//                         //       color = null;
-//                         //     });
-//                         //     postUnlike(snapshot.data[index].reference);
-//                         //   }
-//                         // });
-//                         // updateValues(
-//                         //     snapshot.data[index].reference);
-//                       }),
-//                   new SizedBox(
-//                     width: 16.0,
-//                   ),
-//                   GestureDetector(
-//                     onTap: () {
-//                       Navigator.push(
-//                           context,
-//                           MaterialPageRoute(
-//                               builder: ((context) => CommentsScreen(
-//                                     documentReference:
-//                                         widget.list[widget.index].reference,
-//                                     user: widget.currentUser,
-//                                   ))));
-//                     },
-//                     child: new Icon(
-//                       FontAwesomeIcons.comment,
-//                     ),
-//                   ),
-//                   new SizedBox(
-//                     width: 16.0,
-//                   ),
-//                   new Icon(FontAwesomeIcons.paperPlane),
-//                 ],
-//               ),
-//               new Icon(FontAwesomeIcons.bookmark)
-//             ],
-//           ),
-//         ),
-//         FutureBuilder(
-//           future:
-//               _repository.fetchPostLikes(widget.list[widget.index].reference),
-//           builder:
-//               ((context, AsyncSnapshot<List<DocumentSnapshot>> likesSnapshot) {
-//             if (likesSnapshot.hasData) {
-//               return GestureDetector(
-//                 onTap: () {
-//                   Navigator.push(
-//                       context,
-//                       MaterialPageRoute(
-//                           builder: ((context) => LikesScreen(
-//                                 user: widget.currentUser,
-//                                 documentReference:
-//                                     widget.list[widget.index].reference,
-//                               ))));
-//                 },
-//                 child: Padding(
-//                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-//                   child: likesSnapshot.data.length > 1
-//                       ? Text(
-//                           "Liked by ${likesSnapshot.data[0].data['ownerName']} and ${(likesSnapshot.data.length - 1).toString()} others",
-//                           style: TextStyle(fontWeight: FontWeight.bold),
-//                         )
-//                       : Text(likesSnapshot.data.length == 1
-//                           ? "Liked by ${likesSnapshot.data[0].data['ownerName']}"
-//                           : "0 Likes"),
-//                 ),
-//               );
-//             } else {
-//               return Center(child: CircularProgressIndicator());
-//             }
-//           }),
-//         ),
-//         Padding(
-//             padding:
-//                 const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-//             child: widget.list[widget.index].data['caption'] != null
-//                 ? Column(
-//                     crossAxisAlignment: CrossAxisAlignment.start,
-//                     children: <Widget>[
-//                       Wrap(
-//                         children: <Widget>[
-//                           Text(widget.user.displayName,
-//                               style: TextStyle(fontWeight: FontWeight.bold)),
-//                           Padding(
-//                             padding: const EdgeInsets.only(left: 8.0),
-//                             child:
-//                                 Text(widget.list[widget.index].data['caption']),
-//                           )
-//                         ],
-//                       ),
-//                       Padding(
-//                           padding: const EdgeInsets.only(top: 4.0),
-//                           child: commentWidget(
-//                               widget.list[widget.index].reference))
-//                     ],
-//                   )
-//                 : commentWidget(widget.list[widget.index].reference)),
-//         Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-//           child: Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
-//         )
-//       ],
-//     );
-//   }
-
-//   Widget commentWidget(DocumentReference reference) {
-//     return FutureBuilder(
-//       future: _repository.fetchPostComments(reference),
-//       builder: ((context, AsyncSnapshot<List<DocumentSnapshot>> snapshot) {
-//         if (snapshot.hasData) {
-//           return GestureDetector(
-//             child: Text(
-//               'View all ${snapshot.data.length} comments',
-//               style: TextStyle(color: Colors.grey),
-//             ),
-//             onTap: () {
-//               Navigator.push(
-//                   context,
-//                   MaterialPageRoute(
-//                       builder: ((context) => CommentsScreen(
-//                             documentReference: reference,
-//                             user: widget.currentUser,
-//                           ))));
-//             },
-//           );
-//         } else {
-//           return Center(child: CircularProgressIndicator());
-//         }
-//       }),
-//     );
-//   }
-
-//   void postLike(DocumentReference reference) {
-//     var _like = Like(
-//         ownerName: widget.currentUser.displayName,
-//         ownerPhotoUrl: widget.currentUser.photoUrl,
-//         ownerUid: widget.currentUser.uid,
-//         timeStamp: FieldValue.serverTimestamp());
-//     reference
-//         .collection('likes')
-//         .document(widget.currentUser.uid)
-//         .setData(_like.toMap(_like))
-//         .then((value) {
-//       print("Post Liked");
-//     });
-//   }
-
-//   void postUnlike(DocumentReference reference) {
-//     reference
-//         .collection("likes")
-//         .document(widget.currentUser.uid)
-//         .delete()
-//         .then((value) {
-//       print("Post Unliked");
-//     });
-//   }
-// }

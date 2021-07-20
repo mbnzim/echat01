@@ -27,203 +27,226 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 1,
-          backgroundColor: Colors.black26,
-          title: Text('Post', style: TextStyle(color: Colors.white,)),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      new Container(
-                        height: 40.0,
-                        width: 40.0,
-                        decoration: new BoxDecoration(
-                          shape: BoxShape.circle,
-                          image: new DecorationImage(
-                              fit: BoxFit.fill,
-                              image: new NetworkImage(widget
-                                  .documentSnapshot.data['postOwnerPhotoUrl'])),
+      appBar: AppBar(
+        elevation: 1,
+        backgroundColor: Colors.black26,
+        title: Text('Post',
+            style: TextStyle(
+              color: Colors.white,
+            )),
+      ),
+      body: ListView(
+       children: <Widget>[
+        Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16.0, 16.0, 8.0, 8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    new Container(
+                      height: 40.0,
+                      width: 40.0,
+                      decoration: new BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: new DecorationImage(
+                            fit: BoxFit.fill,
+                            image: new NetworkImage(widget
+                                .documentSnapshot.data['postOwnerPhotoUrl'])),
+                      ),
+                    ),
+                    new SizedBox(
+                      width: 10.0,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        new Text(
+                          widget.documentSnapshot.data['postOwnerName'],
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
-                      ),
-                      new SizedBox(
-                        width: 10.0,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          new Text(
-                            widget.documentSnapshot.data['postOwnerName'],
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          widget.documentSnapshot.data['location'] != null
-                              ? new Text(
+                        widget.documentSnapshot.data['location'] != null
+                            ? new Row(children: <Widget>[
+                                Icon(FontAwesomeIcons.retweet, size: 12),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text(
                                   widget.documentSnapshot.data['location'],
                                   style: TextStyle(color: Colors.grey),
                                 )
-                              : Container(),
-                        ],
-                      )
-                    ],
-                  ),
-                 /* new IconButton(
-                      icon: Icon(Icons.more_vert),
-                      onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(
-                        builder: ((context) => InstaFriendProfileScreen()),
-                                      //documentSnapshot: list[index],
-                                    ));
-                      })*/
-                ],
-              ),
+                              ])
+                            : Container(),
+                      ],
+                    )
+                  ],
+                ),
+                new IconButton(
+                  icon: Icon(Icons.keyboard_control),
+                  onPressed: null,
+                )
+              ],
             ),
-            CachedNetworkImage(
-              imageUrl: widget.documentSnapshot.data['imgUrl'],
-              placeholder: ((context, s) => Center(
-                    child: CircularProgressIndicator(),
-                  )),
-              width: 125.0,
-              height: 250.0,
-              fit: BoxFit.cover,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  new Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      GestureDetector(
-                          child: _isLiked
-                              ? Icon(
-                                  FontAwesomeIcons.fire,
-                                  color: Colors.orange,
-                                )
-                              : Icon(
-                                  FontAwesomeIcons.fire,
-                                  color: null,
-                                ),
-                          onTap: () {
-                            if (!_isLiked) {
-                              setState(() {
-                                _isLiked = true;
-                              });
-                              // saveLikeValue(_isLiked);
-                              postLike(widget.documentSnapshot.reference);
-                            } else {
-                              setState(() {
-                                _isLiked = false;
-                              });
-                              //saveLikeValue(_isLiked);
-                              postUnlike(widget.documentSnapshot.reference);
-                            }
-                          }),
-                      new SizedBox(
-                        width: 16.0,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: ((context) => CommentsScreen(
-                                        documentReference:
-                                            widget.documentSnapshot.reference,
-                                        user: widget.currentuser,
-                                      ))));
-                        },
-                        child: new Icon(
-                          FontAwesomeIcons.comment,
-                        ),
-                      ),
-                      new SizedBox(
-                        width: 16.0,
-                      ),
-                     // new Icon(FontAwesomeIcons.paperPlane),
-                    ],
-                  ),
-                  //new Icon(FontAwesomeIcons.bookmark)
-                ],
-              ),
-            ),
-            FutureBuilder(
-              future:
-                  _repository.fetchPostLikes(widget.documentSnapshot.reference),
-              builder: ((context,
-                  AsyncSnapshot<List<DocumentSnapshot>> likesSnapshot) {
-                if (likesSnapshot.hasData) {
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: ((context) => LikesScreen(
-                                    user: widget.currentuser,
-                                    documentReference:
-                                        widget.documentSnapshot.reference,
-                                  ))));
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      child: likesSnapshot.data.length > 1
-                          ? Text(
-                              "Liked by ${likesSnapshot.data[0].data['ownerName']} and ${(likesSnapshot.data.length - 1).toString()} others",
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            )
-                          : Text(likesSnapshot.data.length == 1
-                              ? "Liked by ${likesSnapshot.data[0].data['ownerName']}"
-                              : "0 Likes"),
+          ),
+          CachedNetworkImage(
+            imageUrl: widget.documentSnapshot.data['imgUrl'],
+            placeholder: ((context, s) => Center(
+                  child: CircularProgressIndicator(),
+                )),
+            fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                new Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    new Icon(FontAwesomeIcons.retweet, size: 28),
+                    new SizedBox(
+                      width: 230,
                     ),
-                  );
-                } else {
-                  return Center(child: CircularProgressIndicator());
-                }
-              }),
-            ),
-            Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: widget.documentSnapshot.data['caption'] != null
-                    ? Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Wrap(
-                            children: <Widget>[
-                              Text(
-                                  widget.documentSnapshot.data['postOwnerName'],
-                                  style:
-                                      TextStyle(fontWeight: FontWeight.bold)),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: Text(
-                                    widget.documentSnapshot.data['caption']),
+                    GestureDetector(
+                        child: _isLiked
+                            ? Icon(
+                                FontAwesomeIcons.fire,
+                                color: Colors.orange,
+                                size: 28,
                               )
-                            ],
-                          ),
-                          Padding(
-                              padding: const EdgeInsets.only(top: 4.0),
-                              child: commentWidget(
-                                  widget.documentSnapshot.reference))
-                        ],
-                      )
-                    : commentWidget(widget.documentSnapshot.reference)),
-            Padding(
+                            : Icon(
+                                FontAwesomeIcons.fire,
+                                color: null,
+                                size: 28,
+                              ),
+                        onTap: () {
+                          if (!_isLiked) {
+                            setState(() {
+                              _isLiked = true;
+                            });
+                            // saveLikeValue(_isLiked);
+                            postLike(widget.documentSnapshot.reference);
+                          } else {
+                            setState(() {
+                              _isLiked = false;
+                            });
+                            //saveLikeValue(_isLiked);
+                            postUnlike(widget.documentSnapshot.reference);
+                          }
+                        }),
+                    new SizedBox(
+                      width: 16.0,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => CommentsScreen(
+                                      documentReference:
+                                          widget.documentSnapshot.reference,
+                                      user: widget.currentuser,
+                                    ))));
+                      },
+                      child: new Icon(
+                        FontAwesomeIcons.comment,
+                        size: 28,
+                      ),
+                    ),
+                    new SizedBox(
+                      width: 16.0,
+                    ),
+                    new Icon(
+                      FontAwesomeIcons.shareAlt,
+                      size: 28,
+                    ),
+                  ],
+                ),
+                //new Icon(FontAwesomeIcons.bookmark)
+              ],
+            ),
+          ),
+          Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+          FutureBuilder(
+            future:
+                _repository.fetchPostLikes(widget.documentSnapshot.reference),
+            builder: ((context,
+                AsyncSnapshot<List<DocumentSnapshot>> likesSnapshot) {
+              if (likesSnapshot.hasData) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: ((context) => LikesScreen(
+                                  user: widget.currentuser,
+                                  documentReference:
+                                      widget.documentSnapshot.reference,
+                                ))));
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    child: likesSnapshot.data.length > 1
+                        ? Text(
+                            "${(likesSnapshot.data.length - 1).toString()} Likes ",
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          )
+                        : Text(likesSnapshot.data.length == 1
+                            ? "${(likesSnapshot.data.length).toString()} Likes  "
+                            : "0 Likes"),
+                  ),
+                );
+              } else {
+                return Center(child: CircularProgressIndicator());
+              }
+            }),
+          ),
+           Padding(
+                          padding: const EdgeInsets.only(top: 4.0),
+                          child: commentWidget(widget.documentSnapshot.reference)),
+                        ]),
+          Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
-            )
-          ],
-        ));
+              child: widget.documentSnapshot.data['caption'] != null
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Wrap(
+                          children: <Widget>[
+                            /* Text(
+                                  widget.documentSnapshot.data['postOwnerName'],
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),*/
+                            Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child:
+                                  Text(widget.documentSnapshot.data['caption']),
+                            )
+                          ],
+                        ),
+                        /* Padding(
+                              padding: const EdgeInsets.only(top: 4.0),
+                              child: commentWidget(
+                                  widget.documentSnapshot.reference))*/
+                      ],
+                    )
+                  : commentWidget(widget.documentSnapshot.reference)),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Text("1 Day Ago", style: TextStyle(color: Colors.grey)),
+          )
+        ],
+      )]),
+    );
   }
 
   Widget commentWidget(DocumentReference reference) {
@@ -233,7 +256,7 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
         if (snapshot.hasData) {
           return GestureDetector(
             child: Text(
-              'View all ${snapshot.data.length} comments',
+              '${snapshot.data.length} Comments',
               style: TextStyle(color: Colors.grey),
             ),
             onTap: () {

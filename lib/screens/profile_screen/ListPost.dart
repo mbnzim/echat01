@@ -31,7 +31,7 @@ class _ListPostsState extends State<ListPosts> {
         if (snapshot.hasData) {
           return GestureDetector(
             child: Text(
-              'View all ${snapshot.data.length} comments',
+              '${snapshot.data.length} comments',
               style: TextStyle(color: Colors.grey),
             ),
             onTap: () {
@@ -104,11 +104,11 @@ class _ListPostsState extends State<ListPosts> {
                                       height: 5, );
                                       Container(
                                         child: likesSnapshot.data.length > 1
-                                   ? Text("${(likesSnapshot.data.length - 1).toString()}",
+                                   ? Text("${(likesSnapshot.data.length - 1).toString()} Likes ",
                                     style:TextStyle(fontWeight: FontWeight.bold,color: Colors.white70 ))
                                   :  Text(likesSnapshot.data.length == 1
-                                      ? "${(likesSnapshot.data.length).toString()}"
-                                      : "0 ")
+                                      ? "${(likesSnapshot.data.length).toString()} Likes  "
+                                      : "0 Likes"),
                                       );
                                     
                                     

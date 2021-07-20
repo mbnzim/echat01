@@ -450,7 +450,7 @@ class _ListItemState extends State<ListItem> {
         if (snapshot.hasData) {
           return GestureDetector(
             child: Text(
-              'View all ${snapshot.data.length} comments',
+              '${snapshot.data.length} Comments',
               style: TextStyle(color: Colors.grey),
             ),
             onTap: () {
@@ -511,17 +511,23 @@ class _ListItemState extends State<ListItem> {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       widget.list[widget.index].data['location'] != null
-                          ? new Text(
+                          ? new Row(children: <Widget>[
+                              Icon(FontAwesomeIcons.retweet, size: 12),
+                              SizedBox(
+                                width: 10,
+                              ),
+                               Text(
                               widget.list[widget.index].data['location'],
                               style: TextStyle(color: Colors.grey),
                             )
+                            ])
                           : Container(),
                     ],
                   )
                 ],
               ),
               new IconButton(
-                icon: Icon(Icons.more_vert),
+                icon: Icon(Icons.keyboard_control),
                 onPressed: null,
               )
             ],
@@ -532,27 +538,34 @@ class _ListItemState extends State<ListItem> {
           placeholder: ((context, s) => Center(
                 child: CircularProgressIndicator(),
               )),
-          width: 125.0,
-          height: 250.0,
+          //width: 125.0,
+         // height: 250.0,
           fit: BoxFit.cover,
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
+              
               new Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
+                  new Icon(FontAwesomeIcons.retweet, size: 28),
+                  new SizedBox(
+                    width: 230,
+                  ),
                   GestureDetector(
                       child: _isLiked
                           ? Icon(
-                              Icons.favorite,
-                              color: Colors.red,
+                              FontAwesomeIcons.fire,
+                              color: Colors.orange,
+                              size: 28,
                             )
                           : Icon(
-                              FontAwesomeIcons.heart,
+                              FontAwesomeIcons.fire,
                               color: null,
+                              size: 28,
                             ),
                       onTap: () {
                         if (!_isLiked) {
@@ -585,15 +598,18 @@ class _ListItemState extends State<ListItem> {
                     },
                     child: new Icon(
                       FontAwesomeIcons.comment,
+                      size: 28,
                     ),
                   ),
                   new SizedBox(
                     width: 16.0,
                   ),
-                  new Icon(FontAwesomeIcons.paperPlane),
+                  new Icon( 
+                    FontAwesomeIcons.shareAlt,
+                    size: 28,),
                 ],
               ),
-              new Icon(FontAwesomeIcons.bookmark)
+              //new Icon(FontAwesomeIcons.bookmark)
             ],
           ),
         ),
@@ -618,11 +634,11 @@ class _ListItemState extends State<ListItem> {
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   child: likesSnapshot.data.length > 1
                       ? Text(
-                          "Liked by ${likesSnapshot.data[0].data['ownerName']} and ${(likesSnapshot.data.length - 1).toString()} others",
+                          "${(likesSnapshot.data.length - 1).toString()} Likes ",
                           style: TextStyle(fontWeight: FontWeight.bold),
                         )
                       : Text(likesSnapshot.data.length == 1
-                          ? "Liked by ${likesSnapshot.data[0].data['ownerName']}"
+                          ? "${(likesSnapshot.data.length).toString()} Likes  "
                           : "0 Likes"),
                 ),
               );
@@ -640,8 +656,8 @@ class _ListItemState extends State<ListItem> {
                     children: <Widget>[
                       Wrap(
                         children: <Widget>[
-                          Text(widget.user.username,
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          /*Text(widget.user.username,
+                              style: TextStyle(fontWeight: FontWeight.bold)),*/
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
                             child:
@@ -649,10 +665,10 @@ class _ListItemState extends State<ListItem> {
                           )
                         ],
                       ),
-                      Padding(
+                     /* Padding(
                           padding: const EdgeInsets.only(top: 4.0),
                           child: commentWidget(
-                              widget.list[widget.index].reference))
+                              widget.list[widget.index].reference))*/
                     ],
                   )
                 : commentWidget(widget.list[widget.index].reference)),

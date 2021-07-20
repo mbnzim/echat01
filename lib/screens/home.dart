@@ -149,7 +149,7 @@ class _TabsState extends State<Tabs> {
 
     return CupertinoTabBar(
       items: [
-        _buildTabBarItem('Calls', CupertinoIcons.phone, CupertinoIcons.phone_solid),
+        _buildTabBarItem('Calls', CupertinoIcons.home, CupertinoIcons.home),
         _buildTabBarItem('Chats', CupertinoIcons.conversation_bubble, CupertinoIcons.conversation_bubble),
         //_buildTabBarItem('Search', CupertinoIcons.search_circle,CupertinoIcons.search_circle_fill),
         _buildTabBarItem('Contacts', CupertinoIcons.search,CupertinoIcons.search),

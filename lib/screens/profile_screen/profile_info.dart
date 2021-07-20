@@ -32,7 +32,7 @@ class _ProfileInfoState extends State<ProfileInfo>
   // bool _isLoading = true;
   FirebaseUser user;
   User details;
-
+ 
   @override
   void initState() {
     super.initState();

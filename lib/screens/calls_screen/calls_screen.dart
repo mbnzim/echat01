@@ -233,7 +233,7 @@ class _FeedScreenState extends State<FeedScreen>
                   width: 10,
                 ),
                 Text("${FakeRepository.data[index].name}",
-            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,color: Colors.white70),)
+             style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18,color: Colors.white70),)
               ],
             ),
           ),

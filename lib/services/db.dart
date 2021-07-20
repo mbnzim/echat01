@@ -258,7 +258,7 @@ class DB {
 
   Future<FirebaseUser> getCurrentUser() async {
     FirebaseUser currentUser;
-    currentUser = await _auth.currentUser();
+    currentUser = await _auth.currentUser(); 
     print("EMAIL ID : ${currentUser.email}");
     return currentUser;
   }
